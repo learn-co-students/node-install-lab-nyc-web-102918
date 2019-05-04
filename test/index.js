@@ -11,7 +11,7 @@ describe('node version', function () {
 })
 
 describe('npm version', function () {
-  it('must be 2.14.15 or greater', function(done){
+  it('must be 6.5.0 or greater', function(done){
     child = cp.exec('npm -v',
     function (error, stdout, stderr) {
       expect(stderr).to.equal('')
@@ -19,7 +19,7 @@ describe('npm version', function () {
         console.log('exec error: ' + error)
       }
       stdout = stdout.replace('\n','')
-      expect(semver.satisfies(stdout, '>=2.14.15')).to.equal(true)
+      expect(semver.satisfies(stdout, '>=6.5.0-next.0')).to.equal(true)
       done()
     })
   })
